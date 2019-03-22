@@ -1,0 +1,244 @@
+@font-face {
+    font-family: "Bluu";
+    src: url("../fonts/TRYBluuSuuperstar-Black.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    src: url("../fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Light.otf") format("truetype");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Proxima Nova";
+    src: url("../fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Regular.otf") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Proxima Nova";
+    src: url("../fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Semibold.otf") format("truetype");
+    font-weight: 600;
+}
+
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #201A4A;
+    cursor: none;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    cursor: none;
+}
+
+
+/*********************
+
+        CURSOR
+
+*********************/
+
+.cursor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    user-select: none;
+}
+.circle_container {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    transform: translate(-50%, -50%);
+    z-index: -100;
+}
+.dot_container {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #201A4A;
+    border: 1px solid rgba(101, 84, 255, 0.8);
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+    position: relative ;
+}
+
+.active_title {
+    width: 200px;
+    height: 200px;
+    transition: 0.3s ease-in-out;
+}
+
+.dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #E6E6E6;
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+}
+
+.active_a {
+    width: 20px;
+    height: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+/*********************
+
+        TITLE
+
+*********************/
+
+
+.title {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+.h1 {
+    position: relative;
+
+}
+
+h1 {
+    font-size: 90px;
+    font-family: "Bluu";
+    color: #E6E6E6;
+    
+}
+h1 .color{
+    color: #6554FF;
+}
+
+h1.plain {
+    position: absolute;
+    top: 0;
+    z-index: -200; 
+}
+
+h1.outline {
+    position: relative;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #E6E6E6; 
+    z-index: 0;
+}
+
+h1.outline .color {
+    color: transparent;
+    -webkit-text-stroke-color: #6554FF;
+}
+
+/*********************
+
+        TEXTE
+
+*********************/
+
+.text {
+    width: calc(100vw /12 *6);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    font-family: "Proxima Nova";
+}
+
+.description {
+    font-weight: 300;
+    font-size: 20px;
+    color: #A696E7;
+    line-height: 30px;
+}
+.description a {
+    color: #E6E6E6;
+    font-weight: 400;
+
+    background-image: url("../assets/dot.svg");
+    background-position: 0 1.04em;
+    background-repeat: repeat-x;
+    background-size: 8px 3px;
+}
+
+h2 {
+    color: #6554FF;
+    margin-bottom: 20px;
+}
+
+.hey {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    
+}
+.rectangle  {
+    background: #6554FF;
+    width: 29px;
+    height: 2px;
+    margin: 8px 10px auto 0;
+}
+
+.logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0 0 0;
+}
+
+/**************************
+
+        RESPONSIVE
+
+***************************/
+
+@media screen and (max-width: 640px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+
+    .h1 {
+        position: relative;
+    }
+
+    .title {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .circle, .dot {
+        display: none;
+    }
+}
